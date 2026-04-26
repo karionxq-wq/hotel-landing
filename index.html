@@ -3,220 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Гостевой дом Каштан</title>
-    <meta
-      name="description"
-      content="Гостевой дом Каштан: уютные номера, зеленый двор, питание и быстрый запрос бронирования."
-    />
-    <link rel="stylesheet" href="styles.css" />
+    <title>Хиро Каштан - вариант 03</title>
+    <link rel="stylesheet" href="assets/hero-prototype.css" />
+    <style>
+      .hero {
+        --hero-position-desktop: center 53%;
+        --hero-position-mobile: center center;
+      }
+    </style>
   </head>
-  <body>
-    <header class="topbar">
-      <a class="brand" href="#top" aria-label="К началу страницы">
-        <img src="assets/logo.png" alt="" />
-        <span>Каштан</span>
-      </a>
-      <nav class="nav" aria-label="Главная навигация">
-        <a href="#rooms">Номера</a>
-        <a href="#comfort">Удобства</a>
-        <a href="#food">Питание</a>
-        <a href="#contacts">Контакты</a>
-      </nav>
-      <a class="topbar__cta" href="#booking">Забронировать</a>
+  <body class="hero-page--selected">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="#" aria-label="Каштан">
+          <img class="brand__logo" src="assets/kashtan_logo_white_only_exact.svg" alt="" aria-hidden="true" />
+          <span class="brand__text" aria-hidden="true">
+            <span class="brand__name">Каштан</span>
+            <span class="brand__tagline">
+              <span>гостиница</span>
+              <span>|</span>
+              <span>Судак</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="booking-button" href="#" aria-label="Забронировать номер">Забронировать</a>
+
+        <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-controls="headerMenu" aria-expanded="false">
+          <span class="menu-toggle__lines" aria-hidden="true"><span></span></span>
+        </button>
+      </div>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-labelledby="hero-title">
-        <img class="hero__image" src="assets/hero.jpg" alt="Фасад гостевого дома Каштан" />
-        <div class="hero__shade"></div>
+    <nav class="header-menu" id="headerMenu" aria-label="Меню шапки">
+      <a href="#">Номера</a>
+      <a href="#">Территория</a>
+      <a href="#">Фото</a>
+      <a href="#">Контакты</a>
+    </nav>
+
+    <main>
+      <section class="hero" aria-label="Главный экран">
+        <img class="hero__image" src="assets/hero/hero-prototype-03.png" alt="Гостиница Каштан в Судаке на закате" />
         <div class="hero__content">
-          <p class="eyebrow">Гостевой дом</p>
-          <h1 id="hero-title">Каштан</h1>
-          <p class="hero__lead">
-            Спокойный отдых в уютном доме с зеленым двором, номерами для пары и семьи,
-            питанием и быстрым запросом свободных дат.
-          </p>
-          <div class="hero__actions">
-            <a class="button button--primary" href="#booking">Проверить даты</a>
-            <a class="button button--ghost" href="#rooms">Посмотреть номера</a>
-          </div>
-          <div class="hero__facts" aria-label="Ключевые преимущества">
-            <span>Зеленая территория</span>
-            <span>Номера разных категорий</span>
-            <span>Заявка за 1 минуту</span>
+          <h1 class="hero__title">Ваш личный уголок спокойствия</h1>
+          <div class="booking-widget-placeholder" aria-label="Место под модуль бронирования Bnovo">
+            <div>
+              <p class="booking-widget-placeholder__title">Здесь будет модуль бронирования Bnovo</p>
+              <p class="booking-widget-placeholder__note">Плашка заложена снизу хиро, чтобы потом без переделки поставить форму дат и гостей.</p>
+            </div>
+            <a class="booking-widget-placeholder__button" href="#">Проверить даты</a>
           </div>
         </div>
       </section>
 
-      <section class="booking-strip" id="booking" aria-labelledby="booking-title">
-        <div>
-          <p class="eyebrow">Быстрый запрос</p>
-          <h2 id="booking-title">Узнать свободные даты</h2>
-        </div>
-        <form class="booking-form" id="bookingForm">
-          <label>
-            Заезд
-            <input name="arrival" type="date" required />
-          </label>
-          <label>
-            Выезд
-            <input name="departure" type="date" required />
-          </label>
-          <label>
-            Гости
-            <select name="guests" required>
-              <option value="1 гость">1 гость</option>
-              <option value="2 гостя" selected>2 гостя</option>
-              <option value="3 гостя">3 гостя</option>
-              <option value="4 гостя">4 гостя</option>
-              <option value="5+ гостей">5+ гостей</option>
-            </select>
-          </label>
-          <button class="button button--dark" type="submit">Отправить заявку</button>
-        </form>
-        <p class="booking-strip__note" id="bookingNote" role="status"></p>
-      </section>
-
-      <section class="section intro" aria-labelledby="intro-title">
-        <div>
-          <p class="eyebrow">Для сайта лучше начать с лендинга</p>
-          <h2 id="intro-title">Одна страница, которая ведет человека к бронированию</h2>
-        </div>
-        <p>
-          Здесь собраны главные вопросы гостя: как выглядит место, какие есть номера,
-          что с питанием, чем удобно проживание и куда оставить заявку. Позже этот
-          лендинг можно расширить до полноценного сайта.
-        </p>
-      </section>
-
-      <section class="section comfort" id="comfort" aria-labelledby="comfort-title">
-        <div class="section__head">
-          <p class="eyebrow">Почему удобно</p>
-          <h2 id="comfort-title">Все важное для спокойного отдыха</h2>
-        </div>
-        <div class="features">
-          <article>
-            <span class="feature-icon">01</span>
-            <h3>Зеленый двор</h3>
-            <p>Территория с местами для отдыха, аккуратными дорожками и приятной тенью.</p>
-          </article>
-          <article>
-            <span class="feature-icon">02</span>
-            <h3>Номера под разные задачи</h3>
-            <p>Можно выбрать формат для пары, семьи или гостей, которым нужно больше места.</p>
-          </article>
-          <article>
-            <span class="feature-icon">03</span>
-            <h3>Питание на месте</h3>
-            <p>Завтраки и домашняя кухня помогают не тратить время на поиск кафе каждый день.</p>
-          </article>
-          <article>
-            <span class="feature-icon">04</span>
-            <h3>Быстрая связь</h3>
-            <p>Гость оставляет даты, количество людей и сразу понимает, что делать дальше.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section split">
-        <div class="split__image">
-          <img src="assets/courtyard.jpg" alt="Зеленый двор и зона отдыха" />
-        </div>
-        <div class="split__text">
-          <p class="eyebrow">Атмосфера</p>
-          <h2>Место, где хочется задержаться после дороги</h2>
-          <p>
-            Для гостиницы важна не только кровать. На странице показываем двор, тишину,
-            зоны отдыха и ощущение ухоженного дома. Это повышает доверие еще до звонка.
-          </p>
-          <a class="button button--outline" href="#gallery">Смотреть фото</a>
-        </div>
-      </section>
-
-      <section class="section rooms" id="rooms" aria-labelledby="rooms-title">
-        <div class="section__head">
-          <p class="eyebrow">Номера</p>
-          <h2 id="rooms-title">Выберите подходящий формат</h2>
-        </div>
-        <div class="room-grid">
-          <article class="room-card">
-            <img src="assets/room-polulux.jpg" alt="Номер Полулюкс" />
-            <div>
-              <h3>Полулюкс</h3>
-              <p>Уютный номер для комфортного отдыха вдвоем или небольшой семьи.</p>
-              <a href="#booking">Узнать наличие</a>
-            </div>
-          </article>
-          <article class="room-card">
-            <img src="assets/room-lux.jpg" alt="Номер Люкс" />
-            <div>
-              <h3>Люкс</h3>
-              <p>Больше пространства для гостей, которым важен повышенный комфорт.</p>
-              <a href="#booking">Узнать наличие</a>
-            </div>
-          </article>
-          <article class="room-card">
-            <img src="assets/room-standart.jpg" alt="Двухкомнатный стандарт" />
-            <div>
-              <h3>Двухкомнатный стандарт</h3>
-              <p>Практичный вариант для семьи или гостей, которым нужны отдельные зоны.</p>
-              <a href="#booking">Узнать наличие</a>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section food" id="food" aria-labelledby="food-title">
-        <div>
-          <p class="eyebrow">Питание</p>
-          <h2 id="food-title">Завтраки и домашний формат</h2>
-          <p>
-            Блок питания лучше оставить на лендинге: для гостей это быстрый ответ на
-            важный бытовой вопрос, а для бронирования это дополнительный плюс.
-          </p>
-        </div>
-        <img src="assets/breakfast.jpg" alt="Завтрак в гостевом доме" />
-      </section>
-
-      <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
-        <div class="section__head">
-          <p class="eyebrow">Фото</p>
-          <h2 id="gallery-title">Честный вид места</h2>
-        </div>
-        <div class="gallery-grid">
-          <img src="assets/hero.jpg" alt="Фасад гостевого дома" />
-          <img src="assets/courtyard.jpg" alt="Двор гостевого дома" />
-          <img src="assets/room-polulux.jpg" alt="Интерьер номера" />
-          <img src="assets/bathroom.jpg" alt="Санузел номера" />
-        </div>
-      </section>
-
-      <section class="section cta" aria-labelledby="cta-title">
-        <p class="eyebrow">Следующий шаг</p>
-        <h2 id="cta-title">Оставьте даты, и администратор проверит свободные номера</h2>
-        <a class="button button--primary" href="#booking">Запросить бронирование</a>
-      </section>
-
-      <section class="section contacts" id="contacts" aria-labelledby="contacts-title">
-        <div>
-          <p class="eyebrow">Контакты</p>
-          <h2 id="contacts-title">Связаться с гостевым домом</h2>
-          <p>Замените эти данные на реальные перед публикацией.</p>
-        </div>
-        <div class="contact-list">
-          <a href="tel:+70000000000">+7 000 000-00-00</a>
-          <a href="mailto:booking@example.com">booking@example.com</a>
-          <span>Адрес гостиницы</span>
-        </div>
+      <section class="below-hero">
+        <p>Вариант 03: атмосферный закатный кадр. Лучше продаёт настроение, но выглядит менее документально.</p>
       </section>
     </main>
 
-    <footer class="footer">
-      <span>© <span id="year"></span> Гостевой дом Каштан</span>
-      <a href="#top">Наверх</a>
-    </footer>
-
-    <a class="mobile-booking" href="#booking">Забронировать</a>
-    <script src="script.js"></script>
+    <script src="assets/hero-prototype.js"></script>
   </body>
 </html>
