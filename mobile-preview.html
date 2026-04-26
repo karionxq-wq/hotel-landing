@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Мобильный просмотр - Каштан</title>
+    <style>
+      :root {
+        --bg: #202319;
+        --phone: #10120d;
+        --screen: #f7f3ea;
+        --ink: #ffffff;
+        --muted: rgba(255, 255, 255, 0.72);
+        --gold: #d2a949;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        margin: 0;
+        display: grid;
+        grid-template-columns: minmax(280px, 430px) minmax(260px, 420px);
+        align-items: center;
+        justify-content: center;
+        gap: 42px;
+        padding: 34px;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .phone {
+        width: min(100%, 390px);
+        height: min(86vh, 844px);
+        min-height: 680px;
+        padding: 14px;
+        border-radius: 34px;
+        background: var(--phone);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+      }
+
+      .screen {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        border-radius: 24px;
+        background: var(--screen);
+      }
+
+      .notch {
+        position: absolute;
+        z-index: 2;
+        top: 8px;
+        left: 50%;
+        width: 118px;
+        height: 24px;
+        transform: translateX(-50%);
+        border-radius: 99px;
+        background: var(--phone);
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .notes {
+        max-width: 420px;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(34px, 6vw, 58px);
+        line-height: 1;
+      }
+
+      p {
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+      a {
+        display: inline-flex;
+        margin-top: 24px;
+        padding: 13px 18px;
+        border-radius: 7px;
+        background: var(--gold);
+        color: #241b07;
+        font-weight: 900;
+        text-decoration: none;
+      }
+
+      @media (max-width: 860px) {
+        body {
+          grid-template-columns: 1fr;
+          padding: 18px;
+        }
+
+        .notes {
+          order: -1;
+        }
+
+        .phone {
+          height: 82vh;
+          min-height: 620px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="phone" aria-label="Превью сайта на телефоне">
+      <div class="screen">
+        <div class="notch"></div>
+        <iframe src="index.html" title="Мобильная версия лендинга"></iframe>
+      </div>
+    </div>
+
+    <section class="notes">
+      <p class="eyebrow">Мобильный просмотр</p>
+      <h1>Так лендинг выглядит на телефоне</h1>
+      <p>
+        Внутри рамки открыта настоящая страница сайта, просто с шириной экрана смартфона.
+        Можно скроллить, нажимать кнопки и проверять заявку.
+      </p>
+      <a href="index.html">Открыть обычную версию</a>
+    </section>
+  </body>
+</html>

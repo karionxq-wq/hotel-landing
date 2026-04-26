@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Хиро Каштан - вариант 03</title>
+    <link rel="stylesheet" href="assets/hero-prototype.css" />
+    <style>
+      .hero {
+        --hero-position-desktop: center 53%;
+        --hero-position-mobile: center center;
+      }
+    </style>
+  </head>
+  <body class="hero-page--selected">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="#" aria-label="Каштан">
+          <img class="brand__logo" src="assets/kashtan_logo_white_only_exact.svg" alt="" aria-hidden="true" />
+          <span class="brand__text" aria-hidden="true">
+            <span class="brand__name">Каштан</span>
+            <span class="brand__tagline">
+              <span>гостиница</span>
+              <span>|</span>
+              <span>Судак</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="booking-button" href="#" aria-label="Забронировать номер">Забронировать</a>
+
+        <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-controls="headerMenu" aria-expanded="false">
+          <span class="menu-toggle__lines" aria-hidden="true"><span></span></span>
+        </button>
+      </div>
+    </header>
+
+    <nav class="header-menu" id="headerMenu" aria-label="Меню шапки">
+      <a href="#">Номера</a>
+      <a href="#">Территория</a>
+      <a href="#">Фото</a>
+      <a href="#">Контакты</a>
+    </nav>
+
+    <main>
+      <section class="hero" aria-label="Главный экран">
+        <img class="hero__image" src="assets/hero/hero-prototype-03.png" alt="Гостиница Каштан в Судаке на закате" />
+        <div class="hero__content">
+          <h1 class="hero__title">Ваш личный уголок спокойствия</h1>
+          <div class="booking-widget-placeholder" aria-label="Место под модуль бронирования Bnovo">
+            <div>
+              <p class="booking-widget-placeholder__title">Здесь будет модуль бронирования Bnovo</p>
+              <p class="booking-widget-placeholder__note">Плашка заложена снизу хиро, чтобы потом без переделки поставить форму дат и гостей.</p>
+            </div>
+            <a class="booking-widget-placeholder__button" href="#">Проверить даты</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="below-hero">
+        <p>Вариант 03: атмосферный закатный кадр. Лучше продаёт настроение, но выглядит менее документально.</p>
+      </section>
+    </main>
+
+    <script src="assets/hero-prototype.js"></script>
+  </body>
+</html>
