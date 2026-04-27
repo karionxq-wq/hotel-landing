@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Бронирование - гостиница Каштан</title>
+    <link rel="stylesheet" href="assets/hero-prototype.css" />
+  </head>
+  <body class="booking-page">
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="brand" href="index.html" aria-label="Каштан">
+          <img class="brand__logo" src="assets/kashtan_logo_white_only_exact.svg" alt="" aria-hidden="true" />
+          <span class="brand__text" aria-hidden="true">
+            <span class="brand__name">Каштан</span>
+            <span class="brand__tagline">
+              <span>гостиница</span>
+              <span>|</span>
+              <span>Судак</span>
+            </span>
+          </span>
+        </a>
+
+        <a class="booking-button" href="booking.html" aria-label="Забронировать номер">Забронировать</a>
+
+        <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-controls="headerMenu" aria-expanded="false">
+          <span class="menu-toggle__lines" aria-hidden="true"><span></span></span>
+        </button>
+      </div>
+    </header>
+
+    <nav class="header-menu" id="headerMenu" aria-label="Меню шапки">
+      <a href="index.html#rooms">Номера</a>
+      <a href="index.html#territory">Территория</a>
+      <a href="index.html#photos">Фото</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+
+    <main class="booking-main">
+      <section class="booking-hero" aria-labelledby="bookingTitle">
+        <p class="booking-hero__eyebrow">Прямое бронирование</p>
+        <h1 class="booking-hero__title" id="bookingTitle">Выберите даты и номер</h1>
+        <p class="booking-hero__text">
+          Бронирование проходит через официальный модуль Bnovo. Здесь можно посмотреть доступные номера, тарифы и оформить заявку напрямую.
+        </p>
+      </section>
+
+      <section class="booking-module" aria-label="Модуль бронирования Bnovo">
+        <div class="booking-module__embed">
+          <div id="booking_iframe">
+            <div
+              id="bn_iframe"
+              style="font-family: 'Proxima nova', 'Helvetica Neue', 'Cera Pro Medium', Arial, Helvetica, sans-serif; position: absolute; right: 0; bottom: 0; font-size: 12px; line-height: 1em; opacity: .5; z-index: 10; margin-top: 10px;"
+            >
+              <div style="color: #1403fc!important; background: rgba(0, 0, 0, 0)!important;">
+                <a
+                  style="color: #808080!important; background: #fff!important;"
+                  href="https://bnovo.ru/bnovo-mb/?utm_source=client_modul_br"
+                  id="bnovo_link"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Система управления отелем Bnovo ©
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="booking-module__hint">
+          Если модуль не загрузился, обновите страницу. На локальном просмотре загрузка зависит от доступа к внешнему скрипту Bnovo.
+        </p>
+      </section>
+    </main>
+
+    <script src="https://widget.reservationsteps.ru/iframe/library/dist/booking_iframe.js"></script>
+    <script>
+      (() => {
+        const initBnovo = () => {
+          if (typeof BookingIframe !== "function") {
+            return;
+          }
+
+          const bnovoBookFrame = new BookingIframe({
+            html_id: "booking_iframe",
+            uid: "d9c69418-efd6-4234-b6d1-d315ee3170ed",
+            lang: "ru",
+            width: "auto",
+            height: "auto",
+            rooms: "",
+            IsMobile: "0",
+            scroll_to_rooms: "0",
+            fixed_header_selector: ".site-header",
+            fixed_mobile_header_width: 800,
+            fixed_mobile_header_selector: ".site-header",
+            fixed_footer_selector: "",
+            fixed_mobile_footer_width: 800,
+            fixed_mobile_footer_selector: "",
+          });
+
+          bnovoBookFrame.init();
+        };
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", initBnovo);
+        } else {
+          initBnovo();
+        }
+      })();
+    </script>
+    <script src="assets/hero-prototype.js"></script>
+  </body>
+</html>
